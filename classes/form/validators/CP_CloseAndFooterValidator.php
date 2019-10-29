@@ -66,6 +66,10 @@ class CP_CloseAndFooterValidator extends CP_PrestaCraftValidatorCore
         Configuration::updateValue('CUSTOMPOPUP_FOOTER_TYPE', $this->getField('CUSTOMPOPUP_FOOTER_TYPE'));
         Configuration::updateValue('CUSTOMPOPUP_BUTTON1_ENABLED', $this->getField('CUSTOMPOPUP_BUTTON1_ENABLED'));
         Configuration::updateValue('CUSTOMPOPUP_BUTTON2_ENABLED', $this->getField('CUSTOMPOPUP_BUTTON2_ENABLED'));
+        Configuration::updateValue('CUSTOMPOPUP_BUTTON1_ACT_CLOSE', $this->getField('CUSTOMPOPUP_BUTTON1_ACT_CLOSE'));
+        Configuration::updateValue('CUSTOMPOPUP_BUTTON2_ACT_CLOSE', $this->getField('CUSTOMPOPUP_BUTTON2_ACT_CLOSE'));
+        Configuration::updateValue('CUSTOMPOPUP_BUTTON1_NEW_TAB', $this->getField('CUSTOMPOPUP_BUTTON1_NEW_TAB'));
+        Configuration::updateValue('CUSTOMPOPUP_BUTTON2_NEW_TAB', $this->getField('CUSTOMPOPUP_BUTTON2_NEW_TAB'));
 
         Configuration::updateValue('CUSTOMPOPUP_OVERLAY', 0);
 

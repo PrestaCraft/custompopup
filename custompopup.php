@@ -48,7 +48,7 @@ class CustomPopup extends Module implements CP_PrestaCraftModuleInterface
     {
         $this->name = 'custompopup';
         $this->tab = 'front_office_features';
-        $this->version = '2.0.2';
+        $this->version = '2.1.0';
         $this->author = 'PrestaCraft';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
@@ -281,10 +281,18 @@ class CustomPopup extends Module implements CP_PrestaCraftModuleInterface
                 'CUSTOMPOPUP_FOOTER_TYPE' => Tools::getValue('CUSTOMPOPUP_FOOTER_TYPE'),
                 'CUSTOMPOPUP_BUTTON1_ENABLED' => Tools::getValue('CUSTOMPOPUP_BUTTON1_ENABLED'),
                 'CUSTOMPOPUP_BUTTON2_ENABLED' => Tools::getValue('CUSTOMPOPUP_BUTTON2_ENABLED'),
+                'CUSTOMPOPUP_BUTTON1_ACT_CLOSE' => Tools::getValue('CUSTOMPOPUP_BUTTON1_ACT_CLOSE'),
+                'CUSTOMPOPUP_BUTTON2_ACT_CLOSE' => Tools::getValue('CUSTOMPOPUP_BUTTON2_ACT_CLOSE'),
+                'CUSTOMPOPUP_BUTTON1_NEW_TAB' => Tools::getValue('CUSTOMPOPUP_BUTTON1_NEW_TAB'),
+                'CUSTOMPOPUP_BUTTON2_NEW_TAB' => Tools::getValue('CUSTOMPOPUP_BUTTON2_NEW_TAB'),
                 'CUSTOMPOPUP_FOOTER_BACKGROUND' => Tools::getValue('CUSTOMPOPUP_FOOTER_BACKGROUND'),
             );
 
-            $closeAndFooterDataAll = array_merge($closeAndFooterDataCloseType, $closeAndFooterData, $closeAndFooterLangData);
+            $closeAndFooterDataAll = array_merge(
+                $closeAndFooterDataCloseType,
+                $closeAndFooterData,
+                $closeAndFooterLangData
+            );
 
             $CP_CloseAndFooterValidator = new CP_CloseAndFooterValidator($this, 'CP_CloseAndFooterForm');
             $CP_CloseAndFooterValidator->setData($closeAndFooterDataAll);

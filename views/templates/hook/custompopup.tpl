@@ -62,8 +62,16 @@
                             {/literal}{if $footer_button1_enabled}{literal}
                                 modal.addFooterBtn('{/literal}{$button1_text_{Context::getContext()->language->id}|unescape: "html" nofilter}{literal}', 'tingle-btn prestacraft-button1', function() {
                                     {/literal}{if $button1_url_{Context::getContext()->language->id}}{literal}
-                                        window.location.href = "{/literal}{$button1_url_{Context::getContext()->language->id}|unescape: "html" nofilter}{literal}";
-                                    {/literal}{else}{literal}
+                                        {/literal}{if $button1_new_tab}{literal}
+                                            window.open(
+                                                '{/literal}{$button1_url_{Context::getContext()->language->id}|unescape: "html" nofilter}{literal}',
+                                                '_blank'
+                                            );
+                                        {/literal}{else}{literal}
+                                            window.location.href = "{/literal}{$button1_url_{Context::getContext()->language->id}|unescape: "html" nofilter}{literal}";
+                                        {/literal}{/if}{literal}
+                                    {/literal}{/if}{literal}
+                                    {/literal}{if $button1_act_close}{literal}
                                         modal.close();
                                     {/literal}{/if}{literal}
                                 });
@@ -72,8 +80,16 @@
                             {/literal}{if $footer_button2_enabled}{literal}
                                 modal.addFooterBtn('{/literal}{$button2_text_{Context::getContext()->language->id}|unescape: "html" nofilter}{literal}', 'tingle-btn prestacraft-button2', function() {
                                     {/literal}{if $button2_url_{Context::getContext()->language->id}}{literal}
-                                        window.location.href = "{/literal}{$button2_url_{Context::getContext()->language->id}|unescape: "html" nofilter}{literal}";
-                                    {/literal}{else}{literal}
+                                        {/literal}{if $button2_new_tab}{literal}
+                                            window.open(
+                                                '{/literal}{$button2_url_{Context::getContext()->language->id}|unescape: "html" nofilter}{literal}',
+                                                '_blank'
+                                            );
+                                        {/literal}{else}{literal}
+                                            window.location.href = "{/literal}{$button2_url_{Context::getContext()->language->id}|unescape: "html" nofilter}{literal}";
+                                        {/literal}{/if}{literal}
+                                    {/literal}{/if}{literal}
+                                    {/literal}{if $button2_act_close}{literal}
                                         modal.close();
                                     {/literal}{/if}{literal}
                                 });

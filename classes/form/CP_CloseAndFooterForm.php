@@ -182,6 +182,43 @@ class CP_CloseAndFooterForm extends CP_PrestaCraftFormCore
                     ),
                     array(
                         'type' => 'switch',
+                        'label' => $this->module->l('[Button 1] Act like close button'),
+                        'desc' => $this->module->l('If you set cookie time in first tab, this option will not show this popup again after clicking this button'),
+                        'name' => 'CUSTOMPOPUP_BUTTON1_ACT_CLOSE',
+                        'is_bool' => true,
+                        'values' => array(
+                            array(
+                                'id' => 'active_on',
+                                'value' => 1,
+                                'label' => $this->module->l('Enabled')
+                            ),
+                            array(
+                                'id' => 'active_off',
+                                'value' => 0,
+                                'label' => $this->module->l('Disabled')
+                            )
+                        ),
+                    ),
+                    array(
+                        'type' => 'switch',
+                        'label' => $this->module->l('[Button 1] Open in new tab?'),
+                        'name' => 'CUSTOMPOPUP_BUTTON1_NEW_TAB',
+                        'is_bool' => true,
+                        'values' => array(
+                            array(
+                                'id' => 'active_on',
+                                'value' => 1,
+                                'label' => $this->module->l('Yes')
+                            ),
+                            array(
+                                'id' => 'active_off',
+                                'value' => 0,
+                                'label' => $this->module->l('No')
+                            )
+                        ),
+                    ),
+                    array(
+                        'type' => 'switch',
                         'label' => $this->module->l('[Button 2] Enable'),
                         'name' => 'CUSTOMPOPUP_BUTTON2_ENABLED',
                         'is_bool' => true,
@@ -211,7 +248,6 @@ class CP_CloseAndFooterForm extends CP_PrestaCraftFormCore
                         'name' => 'CUSTOMPOPUP_BUTTON2_BACKGROUND',
                         'class' => 'leftfix',
                     ),
-
                     array(
                         'type' => 'text',
                         'label' => $this->module->l('[Button 2] URL'),
@@ -221,6 +257,43 @@ class CP_CloseAndFooterForm extends CP_PrestaCraftFormCore
                         'desc' => $this->module->l(
                             "If you enter here a link, it will redirect to this page on click. 
                             If not, this button will close popup on click."
+                        ),
+                    ),
+                    array(
+                        'type' => 'switch',
+                        'label' => $this->module->l('[Button 2] Act like close button'),
+                        'desc' => $this->module->l('If you set cookie time in first tab, this option will not show this popup again after clicking this button'),
+                        'name' => 'CUSTOMPOPUP_BUTTON2_ACT_CLOSE',
+                        'is_bool' => true,
+                        'values' => array(
+                            array(
+                                'id' => 'active_on',
+                                'value' => 1,
+                                'label' => $this->module->l('Enabled')
+                            ),
+                            array(
+                                'id' => 'active_off',
+                                'value' => 0,
+                                'label' => $this->module->l('Disabled')
+                            )
+                        ),
+                    ),
+                    array(
+                        'type' => 'switch',
+                        'label' => $this->module->l('[Button 2] Open in new tab?'),
+                        'name' => 'CUSTOMPOPUP_BUTTON2_NEW_TAB',
+                        'is_bool' => true,
+                        'values' => array(
+                            array(
+                                'id' => 'active_on',
+                                'value' => 1,
+                                'label' => $this->module->l('Yes')
+                            ),
+                            array(
+                                'id' => 'active_off',
+                                'value' => 0,
+                                'label' => $this->module->l('No')
+                            )
                         ),
                     ),
                 ),
@@ -243,6 +316,10 @@ class CP_CloseAndFooterForm extends CP_PrestaCraftFormCore
         $fields['CUSTOMPOPUP_FOOTER_TYPE'] = Configuration::get('CUSTOMPOPUP_FOOTER_TYPE');
         $fields['CUSTOMPOPUP_BUTTON1_ENABLED'] = Configuration::get('CUSTOMPOPUP_BUTTON1_ENABLED');
         $fields['CUSTOMPOPUP_BUTTON2_ENABLED'] = Configuration::get('CUSTOMPOPUP_BUTTON2_ENABLED');
+        $fields['CUSTOMPOPUP_BUTTON1_NEW_TAB'] = Configuration::get('CUSTOMPOPUP_BUTTON1_NEW_TAB');
+        $fields['CUSTOMPOPUP_BUTTON2_NEW_TAB'] = Configuration::get('CUSTOMPOPUP_BUTTON2_NEW_TAB');
+        $fields['CUSTOMPOPUP_BUTTON1_ACT_CLOSE'] = Configuration::get('CUSTOMPOPUP_BUTTON1_ACT_CLOSE');
+        $fields['CUSTOMPOPUP_BUTTON2_ACT_CLOSE'] = Configuration::get('CUSTOMPOPUP_BUTTON2_ACT_CLOSE');
         $fields['CUSTOMPOPUP_FOOTER_BACKGROUND'] = Configuration::get('CUSTOMPOPUP_FOOTER_BACKGROUND');
 
         foreach (Language::getLanguages(true) as $lang) {

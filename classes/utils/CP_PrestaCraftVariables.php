@@ -29,6 +29,10 @@ class CP_PrestaCraftVariables
         Configuration::updateValue('CUSTOMPOPUP_ENABLED', 0);
         Configuration::updateValue('CUSTOMPOPUP_COOKIE', 0);
         Configuration::updateValue('CUSTOMPOPUP_DELAY', 0);
+        Configuration::updateValue('CUSTOMPOPUP_BUTTON1_NEW_TAB', 0);
+        Configuration::updateValue('CUSTOMPOPUP_BUTTON2_NEW_TAB', 0);
+        Configuration::updateValue('CUSTOMPOPUP_BUTTON1_ACT_CLOSE', 0);
+        Configuration::updateValue('CUSTOMPOPUP_BUTTON2_ACT_CLOSE', 0);
     }
 
     public static function getTemplateVars()
@@ -62,6 +66,10 @@ class CP_PrestaCraftVariables
             'footer_button2_enabled' => Configuration::get('CUSTOMPOPUP_BUTTON2_ENABLED'),
             'footer_button1_background' => Configuration::get('CUSTOMPOPUP_BUTTON1_BACKGROUND'),
             'footer_button2_background' => Configuration::get('CUSTOMPOPUP_BUTTON2_BACKGROUND'),
+            'button1_new_tab' => Configuration::get('CUSTOMPOPUP_BUTTON1_NEW_TAB'),
+            'button2_new_tab' => Configuration::get('CUSTOMPOPUP_BUTTON2_NEW_TAB'),
+            'button1_act_close' => Configuration::get('CUSTOMPOPUP_BUTTON1_ACT_CLOSE'),
+            'button2_act_close' => Configuration::get('CUSTOMPOPUP_BUTTON2_ACT_CLOSE'),
         );
 
         $footer = array();

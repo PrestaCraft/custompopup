@@ -105,7 +105,7 @@
             <div role="tabpanel" class="tab-pane {if isset($smarty.post.TAB_4)}active{/if}" id="display">
                 <div class="pc-frame">
                     <p>You can select here one or many available <strong>hooks</strong>.</p>
-                    <p><strong>Hooks</strong> are special places in Your store which appear in different places.</p>
+                    <p><strong>Hooks</strong> are special places in Your store where you may display this popup.</p>
                     <p>If you are unfamiliar with is, please read about them in PrestaShop documentation.
                     You should also find "PrestaShop hook list" for your PS version.</p>
                     <p>Quick "cheat sheet" is in table below:</p>
