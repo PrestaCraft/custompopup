@@ -3,6 +3,7 @@
     padding: 10px;
     color: #31A1C5;
     margin-bottom: 10px;
+    margin: 15px;
 }
 
 .pc-table td {
@@ -29,6 +30,10 @@
 .bootstrap .panel {
     background: transparent !important;
     position: static !important;
+}
+
+.prestacraft .tab-pane {
+    border: 2px solid #ababab !important;
 }
 
 .bootstrap {
@@ -92,7 +97,7 @@ input[name="activateModule"] {
     text-align: center;
 }
 
-.prestacraft a {
+.prestacraft .menu-container a {
     color: #31A1C5 !important;
     text-align: center;
 }
@@ -104,10 +109,17 @@ input[name="activateModule"] {
 
 .prestacraft .panel {
     border-radius: 0 !important;
+    margin-bottom: 0 !important;
+    border: none !important;
 }
 
 .prestacraft-left {
-    widthh: 100%;
+    width: 100%;
+    padding-top: 3px;
+}
+
+#customizestyle .panel {
+    border: 1px solid #eee !important;
 }
 
 .prestacraft .logo-container {
@@ -115,7 +127,6 @@ input[name="activateModule"] {
     background: #fff;
     text-align: center;
 }
-
 
 .prestacraft-left .pc-logo {
     max-width: 100% !important;
@@ -137,8 +148,79 @@ input[name="activateModule"] {
     background: #fff;
     width: 100%;
     text-align: center;
+    padding: 5px 0;
+    border: 1px solid #31A1C5;
 }
 
 .mColorPicker {
     width: 100px !important;
+}
+
+.menu-container {
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+}
+
+.menu-container:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, rgba(18, 62, 76, 1), rgba(49, 161, 197, 1), #5ad3fa, #94dff7);
+    z-index: -1;
+    animation: animatedgradient 4s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#display .panel {
+    margin: 15px;
+}
+
+.bottom-button {
+    padding: 10px 15px;
+    text-decoration: none !important;
+    display: inline-block;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-official-module {
+    background: #df0067;
+    color: snow !important;
+    border: 1px solid #df0067;
+    margin-bottom: 10px;
+}
+
+.btn-official-module:hover {
+    background: white;
+    color: #df0067 !important;
+    border: 1px solid #df0067;
+}
+
+.btn-issue {
+    background: #5d918c;
+    color: snow !important;
+    border: 1px solid #5d918c;
+    margin-bottom: 15px;
+}
+
+.btn-issue:hover {
+    background: white;
+    color: #5d918c !important;
+    border: 1px solid #5d918c;
 }

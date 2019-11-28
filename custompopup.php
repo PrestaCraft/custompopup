@@ -181,7 +181,9 @@ class CustomPopup extends Module implements CP_PrestaCraftModuleInterface
             $langContent = array();
 
             foreach (Language::getLanguages(true) as $la) {
-                $langContent['CUSTOMPOPUP_CONTENT_'.$la['id_lang']] = Tools::getValue('CUSTOMPOPUP_CONTENT_'.$la['id_lang']);
+                $langContent['CUSTOMPOPUP_CONTENT_'.$la['id_lang']] = Tools::getValue(
+                    'CUSTOMPOPUP_CONTENT_'.$la['id_lang']
+                );
             }
 
             $settingsDataAll = array_merge($settingsData, $langContent);
@@ -366,14 +368,14 @@ class CustomPopup extends Module implements CP_PrestaCraftModuleInterface
 
         foreach (Language::getLanguages(true) as $lang) {
             $content = Configuration::get("CUSTOMPOPUP_CONTENT", $lang["id_lang"]);
-            $langContent['content_'.$lang["id_lang"]] = trim(json_encode($content), '"');
+            $langContent['pc_content_'.$lang["id_lang"]] = trim(json_encode($content), '"');
         }
 
         $scripts = array(
-            'tingle_css'  => $this->_path.'views/css/tingle.min.css',
-            'popup_css'  => $this->_path.'views/css/popup.css',
-            'cookie' => $this->_path.'views/js/cookie.js',
-            'tingle' => $this->_path.'views/js/tingle.min.js'
+            'pc_css_tingle'  => $this->_path.'views/css/tingle.min.css',
+            'pc_css_popup'  => $this->_path.'views/css/popup.css',
+            'pc_js_cookie' => $this->_path.'views/js/cookie.js',
+            'pc_js_tingle' => $this->_path.'views/js/tingle.min.js'
         );
 
         $assign = CP_PrestaCraftVariables::getTemplateVars();

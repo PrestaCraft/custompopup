@@ -39,44 +39,52 @@
 <div role="tabpanel" class="prestacraft">
     <!-- Nav tabs -->
     <div class="col-lg-3 col-md-4 col-xs-12 prestacraft-left">
-        <div class="logo-container">
-            <img src="{$module_dir}/views/img/pc_logo.png" class="pc-logo">
-        </div>
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" {if !isset($smarty.post.TAB_1) &&
-            !isset($smarty.post.TAB_2) &&
-            !isset($smarty.post.TAB_3) &&
-            !isset($smarty.post.TAB_4)}class="active"{else}{if isset($smarty.post.TAB_1)}class="active"{/if}{/if}>
-                <a href="#settings" aria-controls="home" role="tab" data-toggle="tab">
-                    <i class="icon-cogs"></i>&nbsp;&nbsp;&nbsp;{l s='Main settings' mod='custompopup'}</a>
-            </li>
+        <div class="menu-container">
+            <div class="logo-container">
+                <img src="{$module_dir}/views/img/pc_logo.png" class="pc-logo">
+            </div>
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" {if !isset($smarty.post.TAB_1) &&
+                !isset($smarty.post.TAB_2) &&
+                !isset($smarty.post.TAB_3) &&
+                !isset($smarty.post.TAB_4)}class="active"{else}{if isset($smarty.post.TAB_1)}class="active"{/if}{/if}>
+                    <a href="#settings" aria-controls="home" role="tab" data-toggle="tab">
+                        <i class="icon-cogs"></i>&nbsp;&nbsp;&nbsp;{l s='Main settings' mod='custompopup'}</a>
+                </li>
 
-            <li role="presentation" {if isset($smarty.post.TAB_2)}class="active"{/if}>
-                <a href="#customizestyle" aria-controls="profile" role="tab" data-toggle="tab">
-                    <i class="icon-pencil"></i>&nbsp;&nbsp;&nbsp;{l s='Customize style' mod='custompopup'}
-                </a>
-            </li>
+                <li role="presentation" {if isset($smarty.post.TAB_2)}class="active"{/if}>
+                    <a href="#customizestyle" aria-controls="profile" role="tab" data-toggle="tab">
+                        <i class="icon-pencil"></i>&nbsp;&nbsp;&nbsp;{l s='Customize style' mod='custompopup'}
+                    </a>
+                </li>
 
-            <li role="presentation" {if isset($smarty.post.TAB_3)}class="active"{/if}>
-                <a href="#extras" aria-controls="profile" role="tab" data-toggle="tab">
-                    <i class="icon-remove"></i>&nbsp;&nbsp;&nbsp;{l s='Close & Footer' mod='custompopup'}
-                </a>
-            </li>
+                <li role="presentation" {if isset($smarty.post.TAB_3)}class="active"{/if}>
+                    <a href="#extras" aria-controls="profile" role="tab" data-toggle="tab">
+                        <i class="icon-remove"></i>&nbsp;&nbsp;&nbsp;{l s='Close & Footer' mod='custompopup'}
+                    </a>
+                </li>
 
-            <li role="presentation" {if isset($smarty.post.TAB_4)}class="active"{/if}>
-                <a href="#display" aria-controls="profile" role="tab" data-toggle="tab">
-                    <i class="icon-eye-open"></i>&nbsp;&nbsp;&nbsp;{l s='Display on pages' mod='custompopup'}
-                </a>
-            </li>
-        </ul>
-
-        <div class="pc-checker">
-            {$VERSION_CHECKER}
+                <li role="presentation" {if isset($smarty.post.TAB_4)}class="active"{/if}>
+                    <a href="#display" aria-controls="profile" role="tab" data-toggle="tab">
+                        <i class="icon-eye-open"></i>&nbsp;&nbsp;&nbsp;{l s='Display on pages' mod='custompopup'}
+                    </a>
+                </li>
+            </ul>
         </div>
 
         <div class="pc-info">
+            <div class="pc-checker">
+                {$VERSION_CHECKER}
+            </div>
+            <br/>
+            <div>
+            <a href="http://prestacraft.com/custom-popup-notification" target="_blank" class="bottom-button btn-official-module">{l s='Official module website' mod='custompopup'}</a>
+
+            <a href="https://github.com/PrestaCraft/custompopup/issues" target="_blank" class="bottom-button btn-issue">{l s='Report an issue' mod='custompopup'}</a>
+            </div>
+
             {include file='./extras/prestacraft.tpl'}
-                <br /><br /><br />
+                <br />
             {include file='./extras/paypal.tpl'}
                 <br /><br />
         </div>
@@ -133,12 +141,14 @@
 
                     <p>If this list of hooks is outdated - a button will appear and you will be able
                     to synchronize this list with your available hooks.</p>
+
+                    <p>Remember, this popup will have effect in FrontOffice only.</p>
                 </div>
 
                 {if ($IF_REQUIRE_HOOK_UPDATE)}
                     {include file='./hook_button.tpl'}
                 {else}
-                    <div style="text-align: center;margin: 10px 0;color: green;">
+                    <div style="text-align: center;margin: 10px 0;color: green;font-size: 14px;">
                         Hook list is up to date.
                     </div>
                 {/if}
