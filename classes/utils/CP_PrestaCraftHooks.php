@@ -43,7 +43,7 @@ class CP_PrestaCraftHooks
 
         if ($hideActions) {
             foreach ($hooksReturn as $k => $v) {
-                if (substr($v, 0, 6) == "action") {
+                if (Tools::substr($v, 0, 6) == "action") {
                     unset($hooksReturn[$k]);
                 }
             }

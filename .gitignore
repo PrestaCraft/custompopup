@@ -1,2 +1,4 @@
 /config*.xml
 config.xml
+translations/*
+.idea

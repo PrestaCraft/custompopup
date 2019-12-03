@@ -1,7 +1,5 @@
 # Custom popup notification (custompopup)
 
-### Current version: 2.1.0
-
 This module displays a popup with Your content on chosen pages.
 <br />
 Note: If you run more than one language in Your store, fill the popup content for all languages to save it correctly.

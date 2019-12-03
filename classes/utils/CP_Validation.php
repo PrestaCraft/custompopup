@@ -87,7 +87,7 @@ class CP_Validation
 
                 case 'is_url_if_not_empty':
                     if (Tools::strlen(trim($field)) > 0) {
-                        if (substr( $field, 0, 7 ) != "http://" && substr( $field, 0, 8 ) != "https://") {
+                        if (Tools::substr( $field, 0, 7 ) != "http://" && Tools::substr( $field, 0, 8 ) != "https://") {
                             $this->setError(
                                 $name,
                                 sprintf(
