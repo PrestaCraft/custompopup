@@ -48,7 +48,7 @@ class CustomPopup extends Module implements CP_PrestaCraftModuleInterface
     {
         $this->name = 'custompopup';
         $this->tab = 'front_office_features';
-        $this->version = '2.2.0';
+        $this->version = '2.3.0';
         $this->author = 'PrestaCraft';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
@@ -383,7 +383,9 @@ class CustomPopup extends Module implements CP_PrestaCraftModuleInterface
         $all = array_merge($langContent, $scripts, $assign);
         $this->context->smarty->assign($all);
 
-        return $this->display(__FILE__, 'custompopup.tpl');
+        if (!Context::getContext()->employee->id) {
+            return $this->display(__FILE__, 'custompopup.tpl');
+        }
     }
 
     // ---- Hooks [end] ----

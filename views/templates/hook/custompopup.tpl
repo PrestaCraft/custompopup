@@ -16,7 +16,6 @@
         <script src="{/literal}{$pc_js_tingle}{literal}"></script>
         <script src="{/literal}{$pc_js_cookie}{literal}"></script>
         <script>
-            if (!$("body").hasClass("ps_back-office")) {
             if (typeof id_lang === 'undefined') {
                 var id_lang = {/literal}{Context::getContext()->language->id}{literal};
             }
@@ -108,7 +107,6 @@
                     {/literal}{if $pc_popup_delay > 0}{literal}
                 },  {/literal}{$pc_popup_delay*1000}{literal});
                 {/literal}{/if}{literal}
-            }
             }
         </script>
     {/literal}
