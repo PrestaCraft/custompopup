@@ -383,9 +383,7 @@ class CustomPopup extends Module implements CP_PrestaCraftModuleInterface
         $all = array_merge($langContent, $scripts, $assign);
         $this->context->smarty->assign($all);
 
-        if (!Context::getContext()->employee->id) {
-            return $this->display(__FILE__, 'custompopup.tpl');
-        }
+        return $this->display(__FILE__, 'custompopup.tpl');
     }
 
     // ---- Hooks [end] ----
