@@ -48,7 +48,7 @@ class CustomPopup extends Module implements CP_PrestaCraftModuleInterface
     {
         $this->name = 'custompopup';
         $this->tab = 'front_office_features';
-        $this->version = '2.3.0';
+        $this->version = '2.4.0';
         $this->author = 'PrestaCraft';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
